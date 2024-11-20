@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
+import './App.css';
 
 const App = () => {
   const [walletAddress, setWalletAddress] = useState('');
@@ -9,7 +10,7 @@ const App = () => {
   const [contractAddress, setContractAddress] = useState('');
 
   const contractAddressOnPolygon = '0x1DB1bF7996aE29D655C0C9a77c9F2497EC05E1ce'; // Replace with the TokenFactory contract address
-  const contractABI = [  {
+  const contractABI = [ {
     "inputs": [],
     "stateMutability": "nonpayable",
     "type": "constructor"
@@ -251,8 +252,9 @@ const App = () => {
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
-  }
-]/* Contract ABI here */ ;
+  },
+  // ... (rest of the ABI, same as your original code)
+  ];
 
   // Using the correct provider
   const provider = new ethers.providers.Web3Provider(window.ethereum);  // Correct instantiation
@@ -333,10 +335,8 @@ const App = () => {
       // Debugging: Log the full receipt to check the structure of events
       console.log('Transaction Receipt:', receipt);
   
-      // Ensure events exist and handle cases where tokenAddress is missing
       let tokenAddress;
       if (receipt.events && receipt.events.length > 0) {
-        // Check for ERC20Created or ERC721Created event and extract the tokenAddress
         const event = receipt.events.find(event => event.event === 'ERC20Created' || event.event === 'ERC721Created');
         if (event) {
           tokenAddress = event.args.tokenAddress;
@@ -344,7 +344,6 @@ const App = () => {
         }
       }
   
-      // If tokenAddress was not found in events, check if it's returned in contractAddress
       if (!tokenAddress && receipt.contractAddress) {
         tokenAddress = receipt.contractAddress;
         console.log('Token created! Contract Address (from receipt):', tokenAddress);
@@ -360,7 +359,6 @@ const App = () => {
       setError('Error creating token');
     }
   };
-  
 
   return (
     <div>

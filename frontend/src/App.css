@@ -40,3 +40,141 @@
 .read-the-docs {
   color: #888;
 }
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif; /* Orbitron font gives a futuristic look */
+}
+
+body {
+  background: linear-gradient(135deg, #ff00cc, #00ffff); /* Neon pink to cyan gradient */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 0 0 5px #ff00cc, 0 0 10px #ff00cc, 0 0 15px #00ffff;
+  margin-bottom: 20px;
+}
+
+/* Form container */
+div {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1250px;
+  box-shadow: 0 0 20px #ff00cc, 0 0 30px #00ffff;
+  backdrop-filter: blur(5px);
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 10px;
+  border: 2px solid #00ffff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #ff00cc;
+  outline: none;
+}
+
+button {
+  background: linear-gradient(45deg, #ff00cc, #00ffff);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #ff00cc, 0 0 15px #00ffff;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ff00cc, 0 0 30px #00ffff;
+}
+
+button:disabled {
+  background: #444;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+select {
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+}
+
+form > div {
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"], select {
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: #00ffff;
+}
+
+form label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+form input {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+button {
+  background: linear-gradient(45deg, #ff00cc, #00ffff);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #00ffff, #ff00cc);
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
+}
